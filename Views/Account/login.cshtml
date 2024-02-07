@@ -1,20 +1,16 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Assignment.Models.LoginViewModel;
 
-<form>
+<form asp-controller="Account" asp-action="Login" method="post">
     <h4 class="text-center">Log in with your email account</h4>
-    <label>
-        Email
-        <input type="email" placeholder="somebody@example.com">
-    </label>
-    <label>
-        Password
-        <input type="password" placeholder="Password">
-    </label>
-    <p><input type="submit" class="button expanded" value="Log in"></input></p>
+    <div class="m-2 text-danger" asp-validation-summary="ModelOnly"></div>
+    <label asp-for="Email">Email</label>
+        <input type="email" asp-for="Email" placeholder="somebody@example.com">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    <label asp-for="Password">Password</label>
+        <input type="password" asp-for="Password" placeholder="Password">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    <input type="submit" class="button" value="Log in" />
+    <br />
     <a href="/Account/Register">Doesn't have an account? Sign up</a>
 </form>
 

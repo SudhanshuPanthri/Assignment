@@ -11,6 +11,10 @@ namespace Assignment.Controllers
 
         public IActionResult Login()
         {
+            //if (true)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
             return View();
         }
 

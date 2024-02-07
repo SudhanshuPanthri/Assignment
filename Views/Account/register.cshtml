@@ -1,29 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Assignment.Models.RegisterViewModel;
 
 <div class="row">
-    <form>
+    <form asp-controller="Account" asp-action="Register" method="post">
         <h4 class="text-center">Sign up with Your Credentials</h4>
-        <label>
-            Username
+        <label asp-for="Name">Username</label>
             <input type="email" placeholder="Please enter a username">
-        </label>
-        <label>
-            Email
+        <label asp-for="Email">Email</label>
             <input type="email" placeholder="somebody@example.com">
-        </label>
-        <label>
-            Password
+        <label asp-for="Password">Password</label>
             <input type="password">
-        </label>
-        <label>
-            Confirm Password
+        <label asp-for="confirmPassword">Confirm Password</label>
             <input type="password">
-        </label>
-        <p><input type="submit" class="button expanded" value="Sign up"></input></p>
+        <input type="submit" class="button" value="Sign up" />
+        <br />
         <a href="/Account/Login">Already have an account? Login</a>
     </form>
 </div>
