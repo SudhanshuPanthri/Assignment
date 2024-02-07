@@ -4,6 +4,7 @@ namespace Assignment.Models
 {
     public class LoginViewModel
     {
+        public int id { get; set; }
         [Required(ErrorMessage = "Please enter a valid Email-Address")]
         [EmailAddress]
         public string Email { get; set; }

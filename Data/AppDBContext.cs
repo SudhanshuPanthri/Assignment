@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Assignment.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Data
 {
@@ -8,5 +9,7 @@ namespace Assignment.Data
         {
 
         }
+
+        public DbSet<RegisterViewModel> Users { get; set; }
     }
 }
