@@ -1,29 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model RegisterViewModel;
 
 <div class="row">
-    <form>
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <h4 class="text-center">Sign up with Your Credentials</h4>
-        <label>
-            Username
-            <input type="email" placeholder="Please enter a username">
-        </label>
-        <label>
-            Email
-            <input type="email" placeholder="somebody@example.com">
-        </label>
-        <label>
-            Password
-            <input type="password">
-        </label>
-        <label>
-            Confirm Password
-            <input type="password">
-        </label>
-        <p><input type="submit" class="button expanded" value="Sign up"></input></p>
+        <div class="form-group" style="margin:20px 0">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" type="text" placeholder="Please enter a username" class="form-control">
+        </div>
+        <div class="form-group" style="margin:20px 0">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="email" placeholder="somebody@example.com" class="form-control">
+        </div>
+        <div class="form-group" style="margin:20px 0">
+        <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" class="form-control">
+        </div>
+        <div class="form-group" style="margin:20px 0">
+            <label asp-for="confirmPassword"></label>
+            <input asp-for="confirmPassword" type="password" class="form-control">
+        </div>
+        <input type="submit" class="button" value="Sign up" />
+        <br />
         <a href="/Account/Login">Already have an account? Login</a>
     </form>
 </div>
